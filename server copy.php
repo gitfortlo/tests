@@ -142,52 +142,6 @@ if (isset($_POST['sub_ticket'])) {
   header("Location: https://192.168.0.107/tests/index.php");
 }}
 
-if (isset($_POST['sub_timesheet1'])) {
-  $name = array();
-  $project = array();
-  $hours = array();
-  $minutes = array();
-  $date = array();
-
-  $name = implode(" ", $name);
-  $project = implode(" ", $project);
-  $hours = implode(" ", $hours );
-  $minutes = implode(" ", $minutes);
-  $date = implode(" ", $date );
-
-  echo $name;
-  echo $project;
-  echo $hours;
-  echo $minutes;
-  
-  // receive all input values from the form
-  //$clientid = mysqli_real_escape_string($db, $_POST['clientid']);
-  //$name = mysqli_real_escape_string($db, $_POST['name']);
-  //$project = mysqli_real_escape_string($db, $_POST['task']);
-  //$hours = mysqli_real_escape_string($db, $_POST['hours']);
-  //$minutes = mysqli_real_escape_string($db, $_POST['minutes']);
-  //$date = mysqli_real_escape_string($db, $_POST['date']);
-  
-  //$descript_of_issue = mysqli_real_escape_string($db, $_POST['descript_of_issue']);
-  //$date_time_of_issue; $curtime = mysqli_real_escape_string($db, $_POST['date_time_of_issue']);
-  //$curtime = mysqli_real_escape_string($db, $_POST[]);
-
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  //if (empty($clientid)) { array_push($errors, "ID is required"); }
-  //if (empty($name)) { array_push($errors, "Name is required"); }
-  //if (empty($project)) { array_push($errors, "project is required"); }
-  //if (empty($hours)) { array_push($errors, "time is required"); }
-  //if (empty($minutes)) { array_push($errors, "time is required"); }
-  //if (empty($descript_of_issue)) { array_push($errors, "Description is required"); }
-  //if (strlen($descript_of_issue) == 0 | strlen($descript_of_issue) == 5) {
-	//array_push($errors, "Description not descriptive");
-  }
- if (count($errors) == 0){
-   $put_into = "INSERT INTO timesheets (name_person, date_now, project, hours_worked, minutes_worked)
-    VALUES('$name', NOW(), '$project', '$hours', '$minutes')";
-    mysqli_query($timesheet_db, $put_into);
- }
 
 // IT ticket report form
 if (isset($_POST['tech_sub'])) {
