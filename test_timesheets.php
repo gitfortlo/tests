@@ -30,7 +30,7 @@
 <body>
     <form method="POST" action="test_timesheets.php">
     <label for="work_date">Work Date for the following entries:</label>
-    <input type="date" id="work_date[]" name="work_date[]" required <?php echo $work_date;?>>
+    <input type="date" name="work_date" required>
     <br><br>
         <table>
             <thead>
