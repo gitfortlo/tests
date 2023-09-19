@@ -45,7 +45,7 @@
 		<p>Here are your tickets history</p>
 		<p><a href="tickreport.php?" style="color:crimson;">Log a problem</a></p>
 		<p><a href="test_timesheets.php?" style="color:crimson;">Submit Timesheet</a></p>
-		<p><a href="update_sheets.php?" style="color:crimson;">Update Timesheet</a></p>
+		
     	<p> <a href="index.php?logout='1'" style="color: red;">Logout</a> </p>
     <?php endif ?>
 </div>

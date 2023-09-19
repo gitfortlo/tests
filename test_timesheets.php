@@ -46,6 +46,7 @@
                     <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"  <?php echo $name;?>></td>
                     <td>
                         <select name="task[]" required <?php echo $tasks?>>
+                        <option value="TLO Internal">TLO Internal</option>
                         <option value="Aloes PM4">Aloes PM4</option>
                             <option value="Antheriums GM5">Antheriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
