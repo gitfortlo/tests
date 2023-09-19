@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Redirect to login page if not logged in
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit();
+}
+
 error_reporting(E_ERROR | E_PARSE);
 
 $db_host = 'localhost';
@@ -8,6 +16,8 @@ $db_name = 'timesheets';
 
 $conn = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$loggedInUser = $_SESSION['username'];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST['update'])) {
@@ -30,50 +40,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-$filter_sql = "SELECT * FROM timesheets";
-if (isset($_POST['filter'])) {
-    $username = $_POST['username'];
-    $work_date = $_POST['filter_date'];
-    $filter_conditions = [];
-
-    if (!empty($username)) {
-        $filter_conditions[] = "name_person LIKE :username";
-    }
-
-    if (!empty($work_date)) {
-        $filter_conditions[] = "work_date = :work_date";
-    }
-
-    if (!empty($filter_conditions)) {
-        $filter_sql .= " WHERE " . implode(' AND ', $filter_conditions);
-    }
-}
+$filter_sql = "SELECT * FROM timesheets WHERE name_person = :loggedInUser";
 
 $stmt = $conn->prepare($filter_sql);
-
-if (!empty($username)) {
-    $stmt->bindParam(':username', $username);
-}
-if (!empty($work_date)) {
-    $stmt->bindParam(':work_date', $work_date);
-}
-
+$stmt->bindParam(':loggedInUser', $loggedInUser);
 $stmt->execute();
+
 $timesheets = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
 <html>
 <body>
-
-<!-- Filter Form -->
-<form method="POST">
-    <label>Username: </label>
-    <input type="text" name="username">
-    <label>Date: </label>
-    <input type="date" name="filter_date">
-    <button type="submit" name="filter">Filter</button>
-</form>
 
 <!-- Update Form -->
 <form method="POST">
