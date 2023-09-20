@@ -47,10 +47,10 @@
                     <td>
                         <select name="task[]" required <?php echo $tasks?>>
                         <option value="TLO Internal">TLO Internal</option>
-                        <option value="TLO Internal">
-                            
-                        </option>
+                        <option value="Reception">Reception</option>
+                        <option value="Larkspurs BA4">Larkspurs BA4</option>
                         <option value="Aloes PM4">Aloes PM4</option>
+                        <option value="Foxgloves PM4">Foxgloves PM4</option>
                             <option value="Antheriums GM5">Antheriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
@@ -130,12 +130,12 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
-                            <option value="Tarsus GM4 2022">Tarsus GM4 2022</option>
+                            <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
                             <option value="Tasmanias IT3">Tasmanias IT3</option>
                             <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
-                            <option value="Trumpets PM4">Trumpets PM4</option>
+                            <option value="Trumpets GM4">Trumpets GM4</option>
                             <option value="Valerians NVC4">Valerians NVC4</option>
                             <option value="Veronicas GM4">Veronicas GM4</option>
                             <option value="Zaharas GM5">Zaharas GM5</option>
@@ -163,7 +163,11 @@
                 <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" <?php echo $name;?>></td>
                 <td>
                     <select name="task[]" required>
+                    <option value="TLO Internal">TLO Internal</option>
+                    <option value="Reception">Reception</option>
+                    <option value="Larkspurs BA4">Larkspurs BA4</option>
                     <option value="Aloes PM4">Aloes PM4</option>
+                    <option value="Foxgloves PM4">Foxgloves PM4</option>
                             <option value="Antheriums GM5">Antheriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
@@ -243,12 +247,12 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
-                            <option value="Tarsus GM4 2022">Tarsus GM4 2022</option>
+                            <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
                             <option value="Tasmanias IT3">Tasmanias IT3</option>
                             <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
-                            <option value="Trumpets PM4">Trumpets PM4</option>
+                            <option value="Trumpets GM4">Trumpets GM4</option>
                             <option value="Valerians NVC4">Valerians NVC4</option>
                             <option value="Veronicas GM4">Veronicas GM4</option>
                             <option value="Zaharas GM5">Zaharas GM5</option>
