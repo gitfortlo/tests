@@ -47,6 +47,7 @@
                     <td>
                         <select name="task[]" required <?php echo $tasks?>>
                         <option value="TLO Internal">TLO Internal</option>
+                        <option value="TLO Admin">TLO Admin</option>
                         <option value="Reception">Reception</option>
                         <option value="Larkspurs BA4">Larkspurs BA4</option>
                         <option value="Aloes PM4">Aloes PM4</option>
@@ -92,7 +93,7 @@
                             <option value="Heliconias BA4">Heliconias BA4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
-                            <option value="IT Short Courses 20235">IT Short Courses 20235</option>
+                            <option value="IT Short Courses 2023">IT Short Courses 2023</option>
                             <option value="Lupins BA4">Lupins BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
@@ -164,6 +165,7 @@
                 <td>
                     <select name="task[]" required>
                     <option value="TLO Internal">TLO Internal</option>
+                    <option value="TLO Admin">TLO Admin</option>
                     <option value="Reception">Reception</option>
                     <option value="Larkspurs BA4">Larkspurs BA4</option>
                     <option value="Aloes PM4">Aloes PM4</option>
@@ -209,7 +211,7 @@
                             <option value="Heliconias BA4">Heliconias BA4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
-                            <option value="IT Short Courses 20235">IT Short Courses 20235</option>
+                            <option value="IT Short Courses 2023">IT Short Courses 2023</option>
                             <option value="Lupins BA4">Lupins BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
