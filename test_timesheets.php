@@ -95,9 +95,9 @@
                             <option value="Hazels BA4">Hazels BA4</option>
                             <option value="Heliconias BA4">Heliconias BA4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
-                            <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="IT Short Courses 2023">IT Short Courses 2023</option>
                             <option value="Lupins BA4">Lupins BA4</option>
+                            <option value="Larkspurs BA4">Larkspurs BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
                             <option value="Mix Telematics GM5">Mix Telematics GM5</option>
@@ -227,9 +227,9 @@
                             <option value="Hazels BA4">Hazels BA4</option>
                             <option value="Heliconias BA4">Heliconias BA4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
-                            <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="IT Short Courses 2023">IT Short Courses 2023</option>
                             <option value="Lupins BA4">Lupins BA4</option>
+                            <option value="Larkspurs BA4">Larkspurs BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
                             <option value="Mix Telematics GM5">Mix Telematics GM5</option>
