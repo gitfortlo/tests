@@ -45,7 +45,7 @@
                 <tr>
                     <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"  <?php echo $name;?>></td>
                     <td>
-                        <select name="task[]" required <?php echo $tasks?>>
+                        <select name="task[]" style="width: min-content;" required <?php echo $tasks?>>
                         <option value="TLO Internal">TLO Internal</option>
                         <option value="TLO Admin">TLO Admin</option>
                         <option value="Reception">Reception</option>
@@ -57,6 +57,8 @@
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
                             <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
+                            <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
+                            <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
                             <option value="Bahamas">Bahamas</option>
                             <option value="Bali IT3">Bali IT3</option>
                             <option value="Barbados Tech Support 4">Barbados Tech Support 4</option>
@@ -65,6 +67,7 @@
                             <option value="Bitcoins">Bitcoins</option>
                             <option value="Bronze Stars">Bronze Stars</option>
                             <option value="BT PM 5">BT PM 5</option>
+                            <option value="Buhler GENERAL MANAGEMENT NQF 5 FY 23/24">Buhler GENERAL MANAGEMENT NQF 5 FY 23/24</option>
                             <option value="BT Systems Dev 4">BT Systems Dev 4</option>
                             <option value="Business Short Courses - 2024">Business Short Courses - 2024</option>
                             <option value="Calatheas GM4">Calatheas GM4</option>
@@ -120,6 +123,16 @@
                             <option value="Starflowers Bookkeeping 3">Starflowers Bookkeeping 3</option>
                             <option value="Sunflowers">Sunflowers</option>
                             <option value="Supergroup BA4">Supergroup BA4</option>
+                            <option value="SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24">SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24</option>
+                            <option value="SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24">SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24</option>
+                            <option value="SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24">SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24</option>
+                            <option value="SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24">SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24</option>
+                            <option value="SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24">SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24</option>
+                            <option value="SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24">SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24</option>
+                            <option value="SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24">SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24</option>
+                            <option value="SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24">SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24</option>
                             <option value="SuperGroup CC2">SuperGroup CC2</option>
                             <option value="Supergroup CC4">Supergroup CC4</option>
                             <option value="SuperGroup GM4">SuperGroup GM4</option>
@@ -131,6 +144,7 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
@@ -141,7 +155,7 @@
                             <option value="Veronicas GM4">Veronicas GM4</option>
                             <option value="Zaharas GM5">Zaharas GM5</option>
                         </select>
-                    <td><input type="textarea" name="description[]" placeholder="Description" required <?php echo $description;?>></td>
+                    <td><input type="textarea" name="description[]"  placeholder="Description" required <?php echo $description;?>></td>
                         
                     <td>
                         <input type="number" name="hours[]" size="8" <?php echo $hours;?>> hours
@@ -175,6 +189,8 @@
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
                             <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
+                            <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
+                            <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
                             <option value="Bahamas">Bahamas</option>
                             <option value="Bali IT3">Bali IT3</option>
                             <option value="Barbados Tech Support 4">Barbados Tech Support 4</option>
@@ -183,6 +199,7 @@
                             <option value="Bitcoins">Bitcoins</option>
                             <option value="Bronze Stars">Bronze Stars</option>
                             <option value="BT PM 5">BT PM 5</option>
+                            <option value="Buhler GENERAL MANAGEMENT NQF 5 FY 23/24">Buhler GENERAL MANAGEMENT NQF 5 FY 23/24</option>
                             <option value="BT Systems Dev 4">BT Systems Dev 4</option>
                             <option value="Business Short Courses - 2024">Business Short Courses - 2024</option>
                             <option value="Calatheas GM4">Calatheas GM4</option>
@@ -242,6 +259,16 @@
                             <option value="Supergroup CC4">Supergroup CC4</option>
                             <option value="SuperGroup GM4">SuperGroup GM4</option>
                             <option value="SuperGroup GM5">SuperGroup GM5</option>
+                            <option value="SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24">SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24</option>
+                            <option value="SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24">SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24</option>
+                            <option value="SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24">SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24</option>
+                            <option value="SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24">SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24</option>
+                            <option value="SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24">SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24</option>
+                            <option value="SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24">SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24</option>
+                            <option value="SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24">SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24</option>
+                            <option value="SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24">SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24</option>
                             <option value="SynergERP Cat. B Bus. Con. '23">SynergERP Cat. B Bus. Con. '23</option>
                             <option value="SynergERP PM5 Group 3">SynergERP PM5 Group 3</option>
                             <option value="Synergy Bookkeeping 4">Synergy Bookkeeping 4</option>
@@ -252,6 +279,7 @@
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
                             <option value="Tasmanias IT3">Tasmanias IT3</option>
                             <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
                             <option value="Trumpets GM4">Trumpets GM4</option>
