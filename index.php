@@ -15,7 +15,7 @@
   	header("location: login.php");
   }
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 	<title>Home</title>

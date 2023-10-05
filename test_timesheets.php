@@ -5,6 +5,7 @@
 <head>
     <title>Timesheets Web Interface</title>
     <style>
+
         table {
             width: 80%;
             border-collapse: collapse;
@@ -45,7 +46,7 @@
                 <tr>
                     <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"  <?php echo $name;?>></td>
                     <td>
-                        <select name="task[]" style="width: min-content;" required <?php echo $tasks?>>
+                        <select name="task[]" style="width: 150px;"  required <?php echo $tasks?>>
                         <option value="TLO Internal">TLO Internal</option>
                         <option value="TLO Admin">TLO Admin</option>
                         <option value="Reception">Reception</option>
@@ -94,6 +95,7 @@
                             <option value="Hawaiians Tech Support 4">Hawaiians Tech Support 4</option>
                             <option value="Hazels BA4">Hazels BA4</option>
                             <option value="Heliconias BA4">Heliconias BA4</option>
+                            <option value="Heleniums MKT4">Heleniums MKT4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="IT Short Courses 2023">IT Short Courses 2023</option>
                             <option value="Lupins BA4">Lupins BA4</option>
@@ -109,12 +111,14 @@
                             <option value="Orchids">Orchids</option>
                             <option value="Periwinkles BA4">Periwinkles BA4</option>
                             <option value="Petunias BA4">Petunias BA4</option>
+                            <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
                             <option value="Plumbago BKK3">Plumbago BKK3</option>
                             <option value="Plumerias BKK4">Plumerias BKK4</option>
                             <option value="Puerto Rico IT3">Puerto Rico IT3</option>
                             <option value="Puerto Rico IT3">Puerto Rico IT3</option>
                             <option value="Salvias GM4">Salvias GM4</option>
                             <option value="Santorinis Sys Supp 5">Santorinis Sys Supp 5</option>
+                            <option value="Santiagos Sys Dev4">Santiagos Sys Dev4</option>
                             <option value="Sardinians Tech Supp 4">Sardinians Tech Supp 4</option>
                             <option value="Senna GM4">Senna GM4</option>
                             <option value="Seychelles IT3">Seychelles IT3</option>
@@ -144,6 +148,7 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus BA 4</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
@@ -156,16 +161,14 @@
                             <option value="Zaharas GM5">Zaharas GM5</option>
                         </select>
                     <td><input type="textarea" name="description[]"  placeholder="Description" required <?php echo $description;?>></td>
-                        
                     <td>
-                        <input type="number" name="hours[]" size="8" <?php echo $hours;?>> hours
-                        <input type="number" name="minutes[]" size="8" required <?php echo $minutes;?>> mins
+                        <input type="number" name="hours[]" min="0" size="8" <?php echo $hours;?>> hours
+                        <input type="number" name="minutes[]" min="0" size="8" required <?php echo $minutes;?>> mins
                     </td>
                     <td><button type="button" onclick="addRow()">Add Row</button></td>
                 </tr>
             </tbody>
         </table>
-        
         <button id="addRowButton" type="button" onclick="addRow()">Add Row</button>
         <input type="submit" name="Submit_Timesheet" value="Submit_Timesheet">
     </form>
@@ -177,7 +180,7 @@
             newRow.innerHTML = `
                 <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" <?php echo $name;?>></td>
                 <td>
-                    <select name="task[]" required>
+                    <select name="task[]" style='width: 150px' required>
                     <option value="TLO Internal">TLO Internal</option>
                     <option value="TLO Admin">TLO Admin</option>
                     <option value="Reception">Reception</option>
@@ -225,6 +228,7 @@
                             <option value="Hashimas Tech Support 4">Hashimas Tech Support 4</option>
                             <option value="Hawaiians Tech Support 4">Hawaiians Tech Support 4</option>
                             <option value="Hazels BA4">Hazels BA4</option>
+                            <option value="Heleniums MKT4">Heleniums MKT4</option>
                             <option value="Heliconias BA4">Heliconias BA4</option>
                             <option value="Hollies NVC4">Hollies NVC4</option>
                             <option value="IT Short Courses 2023">IT Short Courses 2023</option>
@@ -241,11 +245,13 @@
                             <option value="Orchids">Orchids</option>
                             <option value="Periwinkles BA4">Periwinkles BA4</option>
                             <option value="Petunias BA4">Petunias BA4</option>
+                            <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
                             <option value="Plumbago BKK3">Plumbago BKK3</option>
                             <option value="Plumerias BKK4">Plumerias BKK4</option>
                             <option value="Puerto Rico IT3">Puerto Rico IT3</option>
                             <option value="Puerto Rico IT3">Puerto Rico IT3</option>
                             <option value="Salvias GM4">Salvias GM4</option>
+                            <option value="Santiagos Sys Dev4">Santiagos Sys Dev4</option>
                             <option value="Santorinis Sys Supp 5">Santorinis Sys Supp 5</option>
                             <option value="Sardinians Tech Supp 4">Sardinians Tech Supp 4</option>
                             <option value="Senna GM4">Senna GM4</option>
@@ -255,6 +261,8 @@
                             <option value="Starflowers Bookkeeping 3">Starflowers Bookkeeping 3</option>
                             <option value="Sunflowers">Sunflowers</option>
                             <option value="Supergroup BA4">Supergroup BA4</option>
+                            <option value="Supergroup BBKl3">Supergroup BBKl3</option>
+                            <option value="Supergroup Office Administration L5">Supergroup Office Administration L5</option>
                             <option value="SuperGroup CC2">SuperGroup CC2</option>
                             <option value="Supergroup CC4">Supergroup CC4</option>
                             <option value="SuperGroup GM4">SuperGroup GM4</option>
@@ -276,6 +284,7 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus BA 4</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
@@ -290,8 +299,8 @@
                 </td>
                 <td><input type="textarea" name="description[]" placeholder="Description" <?php echo $description;?>></td>
                 <td>
-                    <input type="number" name="hours[]" size="8" required <?php echo $hours;?>>hours
-                    <input type="number" name="minutes[]" size="8" required <?php echo $minutes;?>>mins
+                    <input type="number" name="hours[]" min='0' size="8" required <?php echo $hours;?>>hours
+                    <input type="number" name="minutes[]" min='0' size="8" required <?php echo $minutes;?>>mins
                 </td>
                 <td><button type="button" onclick="removeRow(this)">Remove</button></td>
             `;
