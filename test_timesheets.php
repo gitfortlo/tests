@@ -47,6 +47,9 @@
                     <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"  <?php echo $name;?>></td>
                     <td>
                         <select name="task[]" style="width: 150px;"  required <?php echo $tasks?>>
+                        <option value="Historic Projects">Historic Projects</option>
+                        <option value="Recruitment">Recruitment</option>
+                        <option value="Hosting">Hosting</option>
                         <option value="TLO Internal">TLO Internal</option>
                         <option value="TLO Admin">TLO Admin</option>
                         <option value="Reception">Reception</option>
@@ -149,7 +152,9 @@
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
                             <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
@@ -181,6 +186,9 @@
                 <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" <?php echo $name;?>></td>
                 <td>
                     <select name="task[]" style='width: 150px' required>
+                    <option value="Historic Projects">Historic Projects</option>
+                    <option value="Recruitment">Recruitment</option>
+                    <option value="Hosting">Hosting</option>
                     <option value="TLO Internal">TLO Internal</option>
                     <option value="TLO Admin">TLO Admin</option>
                     <option value="Reception">Reception</option>
@@ -289,6 +297,7 @@
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
                             <option value="Tasmanias IT3">Tasmanias IT3</option>
                             <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
                             <option value="Trumpets GM4">Trumpets GM4</option>
