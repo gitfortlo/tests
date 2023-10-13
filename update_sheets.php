@@ -22,9 +22,8 @@ $loggedInUser = $_SESSION['username'];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST['update'])) {
         try {
-            $stmt = $conn->prepare("UPDATE timesheets SET name_person = :name, work_date = :work_date, project = :task, description = :description, hours_worked = :hours, minutes_worked = :minutes WHERE id = :id");
+            $stmt = $conn->prepare("UPDATE timesheets SET name_person = :name, work_date = :work_date, project = :task, description = :description, hours_worked = :hours, minutes_worked = :minutes");
             
-            $stmt->bindParam(':id', $_POST['id']);
             $stmt->bindParam(':name', $_POST['name']);
             $stmt->bindParam(':work_date', $_POST['work_date']);
             $stmt->bindParam(':task', $_POST['task']);

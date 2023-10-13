@@ -139,7 +139,7 @@ if (isset($_POST['sub_ticket'])) {
   }
   $mail -> smtpClose();
   
-  header("Location: https://192.168.0.107/tests/index.php");
+  header("Location: https://192.168.0.221/tests/index.php");
 }}
 
 

@@ -56,7 +56,7 @@
                         <option value="Larkspurs BA4">Larkspurs BA4</option>
                         <option value="Aloes PM4">Aloes PM4</option>
                         <option value="Foxgloves PM4">Foxgloves PM4</option>
-                            <option value="Antheriums GM5">Antheriums GM5</option>
+                            <option value="Anthuriums GM5">Anthuriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
@@ -141,6 +141,9 @@
                             <option value="SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24">SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24</option>
                             <option value="SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24">SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24</option>
                             <option value="SuperGroup CC2">SuperGroup CC2</option>
+                            <option value="Supergrp Office Administration NQF Level 5">Supergrp Office Administration NQF Level 5</option>
+                            <option value="SuperGrp BBKL3">SuperGrp BBKL3</option>
+                            <option value="Super Grp Technical Accounting NQF Level 5">Super Grp Technical Accounting NQF Level 5</option>
                             <option value="Supergroup CC4">Supergroup CC4</option>
                             <option value="SuperGroup GM4">SuperGroup GM4</option>
                             <option value="SuperGroup GM5">SuperGroup GM5</option>
@@ -195,7 +198,7 @@
                     <option value="Larkspurs BA4">Larkspurs BA4</option>
                     <option value="Aloes PM4">Aloes PM4</option>
                     <option value="Foxgloves PM4">Foxgloves PM4</option>
-                            <option value="Antheriums GM5">Antheriums GM5</option>
+                            <option value="Anthuriums GM5">Anthuriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
@@ -271,6 +274,9 @@
                             <option value="Supergroup BA4">Supergroup BA4</option>
                             <option value="Supergroup BBKl3">Supergroup BBKl3</option>
                             <option value="Supergroup Office Administration L5">Supergroup Office Administration L5</option>
+                            <option value="Supergrp Office Administration NQF Level 5">Supergrp Office Administration NQF Level 5</option>
+                            <option value="SuperGrp BBKL3">SuperGrp BBKL3</option>
+                            <option value="Super Grp Technical Accounting NQF Level 5">Super Grp Technical Accounting NQF Level 5</option>
                             <option value="SuperGroup CC2">SuperGroup CC2</option>
                             <option value="Supergroup CC4">Supergroup CC4</option>
                             <option value="SuperGroup GM4">SuperGroup GM4</option>
