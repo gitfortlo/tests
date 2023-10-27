@@ -1,255 +1,331 @@
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
+<?php include("test_server_sheets.php");?>
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
 <head>
-  <script src="min.js"></script>
-  <script src="min.js"></script>
-  <script src="min.css"></script>  
-  <script src="min.js"></script>
-  <link rel="stylesheet" href="min.css"/>
-      <link rel="stylesheet" href="min.css"/>
-    <script src="min.js"></script>
-    <script src="min.js"></script>
-    <script>
-      $('.ui.dropdown')
-  .dropdown()
-;
+    <title>Timesheets Web Interface</title>
+    <style>
 
-$(document).ready(function() {
-  $(".js-example-basic-single").select2();
-});
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
 
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
+        th {
+            background-color: #f2f2f2;
+        }
 
-webshims.setOptions('forms-ext', {types: 'date'});
-webshims.polyfill('forms forms-ext');
-$.webshims.formcfg = {
-en: {
-    dFormat: '-',
-    dateSigns: '-',
-    patterns: {
-        d: "yy-mm-dd"
-    }
-}
-};
-
-var date = new Date();
-
-var day = date.getDate();
-var month = date.getMonth() + 1;
-var year = date.getFullYear();
-
-if (month < 10) month = "0" + month;
-if (day < 10) day = "0" + day;
-
-var today = year + "-" + month + "-" + day;       
-document.getElementById("theDate").value = today;
-
-
-
-    </script>
-  
+        #addRowButton {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
 </head>
+<body>
+    <form method="POST" action="test_timesheets.php">
+    <label for="work_date">Work Date for the following entries:</label>
+    <input type="date" name="work_date" required>
+    <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Project name</th>
+                    <th>Description</th>
+                    <th>Time Worked</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>"  <?php echo $name;?>></td>
+                    <td>
+                        <select name="task[]" style="width: 150px;"  required <?php echo $tasks?>>
+                        <option value="Historic Projects">Historic Projects</option>
+                        <option value="Recruitment">Recruitment</option>
+                        <option value="Hosting">Hosting</option>
+                        <option value="TLO Internal">TLO Internal</option>
+                        <option value="TLO Admin">TLO Admin</option>
+                        <option value="Reception">Reception</option>
+                        <option value="Larkspurs BA4">Larkspurs BA4</option>
+                        <option value="Aloes PM4">Aloes PM4</option>
+                        <option value="Foxgloves PM4">Foxgloves PM4</option>
+                            <option value="Anthuriums GM5">Anthuriums GM5</option>
+                            <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
+                            <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
+                            <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
+                            <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
+                            <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
+                            <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bali IT3">Bali IT3</option>
+                            <option value="Barbados Tech Support 4">Barbados Tech Support 4</option>
+                            <option value="Begonias BA3">Begonias BA3</option>
+                            <option value="Bellflowers GM5">Bellflowers GM5</option>
+                            <option value="Bitcoins">Bitcoins</option>
+                            <option value="Bronze Stars">Bronze Stars</option>
+                            <option value="BT PM 5">BT PM 5</option>
+                            <option value="Buhler GENERAL MANAGEMENT NQF 5 FY 23/24">Buhler GENERAL MANAGEMENT NQF 5 FY 23/24</option>
+                            <option value="BT Systems Dev 4">BT Systems Dev 4</option>
+                            <option value="Business Short Courses - 2024">Business Short Courses - 2024</option>
+                            <option value="Calatheas GM4">Calatheas GM4</option>
+                            <option value="Calanthe BA4">Calanthe BA4</option>
+                            <option value="Caribbeans Sys Dev4">Caribbeans Sys Dev4</option>
+                            <option value="Carnations">Carnations</option>
+                            <option value="Cassias M4">Cassias M4</option>
+                            <option value="Cattleyas M4">Cattleyas M4</option>
+                            <option value="Coral Bells GM4">Coral Bells GM4</option>
+                            <option value="Cosmos GM4">Cosmos GM4</option>
+                            <option value="Cubans System Support 5">Cubans System Support 5</option>
+                            <option value="Cybernetics">Cybernetics</option>
+                            <option value="Daphnes GM5">Daphnes GM5</option>
+                            <option value="Datanators">Datanators</option>
+                            <option value="Delphiniums PM4">Delphiniums PM4</option>
+                            <option value="Dwyka IT3 2023">Dwyka IT3 2023</option>
+                            <option value="Ferns BA4">Ferns BA4</option>
+                            <option value="Florentinas GM4">Florentinas GM4</option>
+                            <option value="BT Systems Dev 4">BT Systems Dev 4</option>
+                            <option value="Fresias PM4">Fresias PM4</option>
+                            <option value="Gardenias GM4">Gardenias GM4</option>
+                            <option value="Gazanias">Gazanias</option>
+                            <option value="Hashimas Tech Support 4">Hashimas Tech Support 4</option>
+                            <option value="Hawaiians Tech Support 4">Hawaiians Tech Support 4</option>
+                            <option value="Hazels BA4">Hazels BA4</option>
+                            <option value="Heliconias BA4">Heliconias BA4</option>
+                            <option value="Heleniums MKT4">Heleniums MKT4</option>
+                            <option value="Hollies NVC4">Hollies NVC4</option>
+                            <option value="IT Short Courses 2023">IT Short Courses 2023</option>
+                            <option value="Lupins BA4">Lupins BA4</option>
+                            <option value="Larkspurs BA4">Larkspurs BA4</option>
+                            <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
+                            <option value="MAN Personal Mastery">MAN Personal Mastery</option>
+                            <option value="Mix Telematics GM5">Mix Telematics GM5</option>
+                            <option value="Mix Telematics KZN GM4">Mix Telematics KZN GM4</option>
+                            <option value="MiX Telematics PM5 2022">MiX Telematics PM5 2022</option>
+                            <option value="MiX Telematics PM5 2023">MiX Telematics PM5 2023</option>
+                            <option value="ODETDP">ODETDP</option>
+                            <option value="Oleanders GM4">Oleanders GM4</option>
+                            <option value="Orchids">Orchids</option>
+                            <option value="Periwinkles BA4">Periwinkles BA4</option>
+                            <option value="Petunias BA4">Petunias BA4</option>
+                            <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
+                            <option value="Plumbago BKK3">Plumbago BKK3</option>
+                            <option value="Plumerias BKK4">Plumerias BKK4</option>
+                            <option value="Puerto Rico IT3">Puerto Rico IT3</option>
+                            <option value="Puerto Rico IT3">Puerto Rico IT3</option>
+                            <option value="Salvias GM4">Salvias GM4</option>
+                            <option value="Santorinis Sys Supp 5">Santorinis Sys Supp 5</option>
+                            <option value="Santiagos Sys Dev4">Santiagos Sys Dev4</option>
+                            <option value="Sardinians Tech Supp 4">Sardinians Tech Supp 4</option>
+                            <option value="Senna GM4">Senna GM4</option>
+                            <option value="Seychelles IT3">Seychelles IT3</option>
+                            <option value="Short Courses 2023">Short Courses 2023</option>
+                            <option value="Snowdrops NVC4">Snowdrops NVC4</option>
+                            <option value="Starflowers Bookkeeping 3">Starflowers Bookkeeping 3</option>
+                            <option value="Sunflowers">Sunflowers</option>
+                            <option value="Supergroup BA4">Supergroup BA4</option>
+                            <option value="SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24">SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24</option>
+                            <option value="SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24">SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24</option>
+                            <option value="SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24">SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24</option>
+                            <option value="SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24">SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24</option>
+                            <option value="SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24">SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24</option>
+                            <option value="SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24">SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24</option>
+                            <option value="SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24">SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24</option>
+                            <option value="SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24">SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24</option>
+                            <option value="SuperGroup CC2">SuperGroup CC2</option>
+                            <option value="Supergrp Office Administration NQF Level 5">Supergrp Office Administration NQF Level 5</option>
+                            <option value="SuperGrp BBKL3">SuperGrp BBKL3</option>
+                            <option value="Super Grp Technical Accounting NQF Level 5">Super Grp Technical Accounting NQF Level 5</option>
+                            <option value="Supergroup CC4">Supergroup CC4</option>
+                            <option value="SuperGroup GM4">SuperGroup GM4</option>
+                            <option value="SuperGroup GM5">SuperGroup GM5</option>
+                            <option value="SynergERP Cat. B Bus. Con. '23">SynergERP Cat. B Bus. Con. '23</option>
+                            <option value="SynergERP PM5 Group 3">SynergERP PM5 Group 3</option>
+                            <option value="Synergy Bookkeeping 4">Synergy Bookkeeping 4</option>
+                            <option value="Synergy ICT Internship">Synergy ICT Internship</option>
+                            <option value="Talksure GM5 2023">Talksure GM5 2023</option>
+                            <option value="Talksure Skills Programme">Talksure Skills Programme</option>
+                            <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
+                            <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
+                            <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
+                            <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
+                            <option value="Tasmanias IT3">Tasmanias IT3</option>
+                            <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
+                            <option value="Trumpets GM4">Trumpets GM4</option>
+                            <option value="Valerians NVC4">Valerians NVC4</option>
+                            <option value="Veronicas GM4">Veronicas GM4</option>
+                            <option value="Zaharas GM5">Zaharas GM5</option>
+                        </select>
+                    <td><input type="textarea" name="description[]"  placeholder="Description" required <?php echo $description;?>></td>
+                    <td>
+                        <input type="number" name="hours[]" min="0" max="16" size="8" <?php echo $hours;?>> hours
+                        <input type="number" name="minutes[]" min="0" max="60" size="8" required <?php echo $minutes;?>> mins
+                    </td>
+                    <td><button type="button" onclick="addRow()">Add Row</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="addRowButton" type="button" onclick="addRow()">Add Row</button>
+        <input type="submit" name="Submit_Timesheet" value="Submit_Timesheet">
+    </form>
 
-  <div>
-    <p class="maintitle">Monthly Timesheet</p>
-  </div>
+    <script>
+        function addRow() {
+            const tableBody = document.querySelector('tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><input type="text" name="name[]" readonly value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" <?php echo $name;?>></td>
+                <td>
+                    <select name="task[]" style='width: 150px' required>
+                    <option value="Historic Projects">Historic Projects</option>
+                    <option value="Recruitment">Recruitment</option>
+                    <option value="Hosting">Hosting</option>
+                    <option value="TLO Internal">TLO Internal</option>
+                    <option value="TLO Admin">TLO Admin</option>
+                    <option value="Reception">Reception</option>
+                    <option value="Larkspurs BA4">Larkspurs BA4</option>
+                    <option value="Aloes PM4">Aloes PM4</option>
+                    <option value="Foxgloves PM4">Foxgloves PM4</option>
+                            <option value="Anthuriums GM5">Anthuriums GM5</option>
+                            <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
+                            <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
+                            <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
+                            <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
+                            <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
+                            <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Bali IT3">Bali IT3</option>
+                            <option value="Barbados Tech Support 4">Barbados Tech Support 4</option>
+                            <option value="Begonias BA3">Begonias BA3</option>
+                            <option value="Bellflowers GM5">Bellflowers GM5</option>
+                            <option value="Bitcoins">Bitcoins</option>
+                            <option value="Bronze Stars">Bronze Stars</option>
+                            <option value="BT PM 5">BT PM 5</option>
+                            <option value="Buhler GENERAL MANAGEMENT NQF 5 FY 23/24">Buhler GENERAL MANAGEMENT NQF 5 FY 23/24</option>
+                            <option value="BT Systems Dev 4">BT Systems Dev 4</option>
+                            <option value="Business Short Courses - 2024">Business Short Courses - 2024</option>
+                            <option value="Calatheas GM4">Calatheas GM4</option>
+                            <option value="Calanthe BA4">Calanthe BA4</option>
+                            <option value="Caribbeans Sys Dev4">Caribbeans Sys Dev4</option>
+                            <option value="Carnations">Carnations</option>
+                            <option value="Cassias M4">Cassias M4</option>
+                            <option value="Cattleyas M4">Cattleyas M4</option>
+                            <option value="Coral Bells GM4">Coral Bells GM4</option>
+                            <option value="Cosmos GM4">Cosmos GM4</option>
+                            <option value="Cubans System Support 5">Cubans System Support 5</option>
+                            <option value="Cybernetics">Cybernetics</option>
+                            <option value="Daphnes GM5">Daphnes GM5</option>
+                            <option value="Datanators">Datanators</option>
+                            <option value="Delphiniums PM4">Delphiniums PM4</option>
+                            <option value="Dwyka IT3 2023">Dwyka IT3 2023</option>
+                            <option value="Ferns BA4">Ferns BA4</option>
+                            <option value="Florentinas GM4">Florentinas GM4</option>
+                            <option value="BT Systems Dev 4">BT Systems Dev 4</option>
+                            <option value="Fresias PM4">Fresias PM4</option>
+                            <option value="Gardenias GM4">Gardenias GM4</option>
+                            <option value="Gazanias">Gazanias</option>
+                            <option value="Hashimas Tech Support 4">Hashimas Tech Support 4</option>
+                            <option value="Hawaiians Tech Support 4">Hawaiians Tech Support 4</option>
+                            <option value="Hazels BA4">Hazels BA4</option>
+                            <option value="Heleniums MKT4">Heleniums MKT4</option>
+                            <option value="Heliconias BA4">Heliconias BA4</option>
+                            <option value="Hollies NVC4">Hollies NVC4</option>
+                            <option value="IT Short Courses 2023">IT Short Courses 2023</option>
+                            <option value="Lupins BA4">Lupins BA4</option>
+                            <option value="Larkspurs BA4">Larkspurs BA4</option>
+                            <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
+                            <option value="MAN Personal Mastery">MAN Personal Mastery</option>
+                            <option value="Mix Telematics GM5">Mix Telematics GM5</option>
+                            <option value="Mix Telematics KZN GM4">Mix Telematics KZN GM4</option>
+                            <option value="MiX Telematics PM5 2022">MiX Telematics PM5 2022</option>
+                            <option value="MiX Telematics PM5 2023">MiX Telematics PM5 2023</option>
+                            <option value="ODETDP">ODETDP</option>
+                            <option value="Oleanders GM4">Oleanders GM4</option>
+                            <option value="Orchids">Orchids</option>
+                            <option value="Periwinkles BA4">Periwinkles BA4</option>
+                            <option value="Petunias BA4">Petunias BA4</option>
+                            <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
+                            <option value="Plumbago BKK3">Plumbago BKK3</option>
+                            <option value="Plumerias BKK4">Plumerias BKK4</option>
+                            <option value="Puerto Rico IT3">Puerto Rico IT3</option>
+                            <option value="Puerto Rico IT3">Puerto Rico IT3</option>
+                            <option value="Salvias GM4">Salvias GM4</option>
+                            <option value="Santiagos Sys Dev4">Santiagos Sys Dev4</option>
+                            <option value="Santorinis Sys Supp 5">Santorinis Sys Supp 5</option>
+                            <option value="Sardinians Tech Supp 4">Sardinians Tech Supp 4</option>
+                            <option value="Senna GM4">Senna GM4</option>
+                            <option value="Seychelles IT3">Seychelles IT3</option>
+                            <option value="Short Courses 2023">Short Courses 2023</option>
+                            <option value="Snowdrops NVC4">Snowdrops NVC4</option>
+                            <option value="Starflowers Bookkeeping 3">Starflowers Bookkeeping 3</option>
+                            <option value="Sunflowers">Sunflowers</option>
+                            <option value="Supergroup BA4">Supergroup BA4</option>
+                            <option value="Supergroup BBKl3">Supergroup BBKl3</option>
+                            <option value="Supergroup Office Administration L5">Supergroup Office Administration L5</option>
+                            <option value="Supergrp Office Administration NQF Level 5">Supergrp Office Administration NQF Level 5</option>
+                            <option value="SuperGrp BBKL3">SuperGrp BBKL3</option>
+                            <option value="Super Grp Technical Accounting NQF Level 5">Super Grp Technical Accounting NQF Level 5</option>
+                            <option value="SuperGroup CC2">SuperGroup CC2</option>
+                            <option value="Supergroup CC4">Supergroup CC4</option>
+                            <option value="SuperGroup GM4">SuperGroup GM4</option>
+                            <option value="SuperGroup GM5">SuperGroup GM5</option>
+                            <option value="SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24">SuperGroup W&R OPERATIONS NQF Level 3 FY 23/24</option>
+                            <option value="SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24">SuperGroup LEADERSHIP DEVELOPMENT NQF4 FY 23/24</option>
+                            <option value="SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24">SuperGroup GM4 PLANNING & SCHEDULING AND INVENTORY FY 23/24</option>
+                            <option value="SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24">SuperGroup GENERIC MANAGEMENT NQF3 FY 23/24</option>
+                            <option value="SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24">SuperGroup CUSTOMER MANAGEMENT NQF5 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 1 FY 23/24</option>
+                            <option value="SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24">SuperGroup GENERAL MANAGEMENT NQF 5 Group 2 FY 23/24</option>
+                            <option value="SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24">SuperGroup BUSINESS ADMINISTRATION NQF4 FY 23/24</option>
+                            <option value="SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24">SuperGroup CONTACT CENTRE SUPPORT NQF 4 FY 23/24</option>
+                            <option value="SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24">SuperGroup Contact Centre Operations NQF Level 4 Unemployed FY 23/24</option>
+                            <option value="SynergERP Cat. B Bus. Con. '23">SynergERP Cat. B Bus. Con. '23</option>
+                            <option value="SynergERP PM5 Group 3">SynergERP PM5 Group 3</option>
+                            <option value="Synergy Bookkeeping 4">Synergy Bookkeeping 4</option>
+                            <option value="Synergy ICT Internship">Synergy ICT Internship</option>
+                            <option value="Talksure GM5 2023">Talksure GM5 2023</option>
+                            <option value="Talksure Skills Programme">Talksure Skills Programme</option>
+                            <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
+                            <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
+                            <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
+                            <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
+                            <option value="Tasmanias IT3">Tasmanias IT3</option>
+                            <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
+                            <option value="Trumpets GM4">Trumpets GM4</option>
+                            <option value="Valerians NVC4">Valerians NVC4</option>
+                            <option value="Veronicas GM4">Veronicas GM4</option>
+                            <option value="Zaharas GM5">Zaharas GM5</option>
+                    </select>
+                </td>
+                <td><input type="textarea" name="description[]" placeholder="Description" <?php echo $description;?>></td>
+                <td>
+                    <input type="number" name="hours[]" min='0' max="16 size="8" required <?php echo $hours;?>>hours
+                    <input type="number" name="minutes[]" min='0' max="60" size="8" required <?php echo $minutes;?>>mins
+                </td>
+                <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+            `;
+            tableBody.appendChild(newRow);
+        }
 
-<section class="timesheet-navigation">
-    <div class="nav">
-      <div class="container-fluid ">
-       <div class="tabbable">
-        <ul class="nav nav-tabs" data-tabs="tabs" id="myTab">
-        <th class="active"><a data-toggle="tab" href="#incoming">Current</a></th>
-        <th><a data-toggle="tab" href="#sentmsg">Previous</a></th>
-        <th><a data-toggle="tab" href="#sentmsg">Not Sent</a></th>
-        <th><a data-toggle="tab" href="#sentmsg">Wait for Accept</a></th>
-        <th><a data-toggle="tab" href="#sentmsg">Accepted</a></th>
-        <th><a data-toggle="tab" href="#sentmsg">Rejected</a></th>
-        </ul>
-        <div class="tab-content">
-        <div class="tab-pane active" id="incoming">
-          
-</section>
-
-
-<section class="timesheet-buttons">
-
-  <input type="date" id="theDate">
-  
-  <div class="today-timesheet">
-    <button type="button" class="newmsgb">Today</button>
-    <button type="button" class="add-task-timesheet" data-toggle="modal" data-target="#addtask">Add New Task</button>
-  </div>
-</section>
-
-<section style="margin-top: -40px">
-  
-  <p class="picked-day">2016-12-30</p>
-
-
-  
-    
-</section>
-
-<section>
- <div class="container-fluid">
-   <div class="row">
-     <div class="col-md-12 col-sm-12 col-xs-12 tab-title">
-       <div class="row">
-          <div class="col-md-2 col-sm-2 col-xs-1">
-            <div class="statustitle">Project</div>
-           </div>
-           <div class="col-md-2 col-sm-2 col-xs-2">
-             <div class="projectnametitle">Task</div>
-           </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="completiontitle">Date</div>
-           </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="detailstitle">Start Date/End Date</div>
-            </div>
-            <div class="col-md-1 col-sm-1 col-xs-1">
-              <div class="detailstitle">Duration</div>
-            </div>
-             <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="detailstitle">Description</div>
-            </div>
-             <div class="col-md-1 col-sm-1 col-xs-1">
-              <div class="tsdelete-row"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-</section>
-
-
-<section>
- <div class="container-fluid">
-   <div class="row">
-     <div class="col-md-12 col-sm-12 col-xs-12">
-       <div class="row timesheet-task-row">
-          <div class="col-md-2 col-sm-2 col-xs-1">
-            <div class="statustitle">Project 1</div>
-           </div>
-           <div class="col-md-2 col-sm-2 col-xs-2">
-             <div class="projectnametitle">Task 1</div>
-           </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="completiontitle">2016-12-12</div>
-           </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="detailstitle">12:00/13:00</div>
-            </div>
-            <div class="col-md-1 col-sm-1 col-xs-1">
-              <div class="detailstitle">1 Hr.</div>
-            </div>
-             <div class="col-md-2 col-sm-2 col-xs-2">
-              <div class="detailstitle">Really hard work.</div>
-            </div>
-             <div class="col-md-1 col-sm-1 col-xs-1">
-              <div class="tsdelete-row">x</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-</section>
-
-
-<!-- Modal -->
-<div id="addtask" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content timesheet">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Task</h4>
-      </div>
-      <div class="modal-body">
-        
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Project</p>
-                </div>
-                <div class="col-md-9">
-                  
-                <select class="js-example-basic-single">
-                  <option>Project1</option>
-                  <option>Project2</option>
-                  <option>Project3</option>
-                  <option>Project4</option>
-                  <option>Project5</option>
-                </select>
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Task</p>
-                </div>
-                <div class="col-md-9">
-                  
-                <select class="js-example-basic-single">
-                  <option>Task1</option>
-                  <option>Task2</option>
-                  <option>Task3</option>
-                  <option>Task4</option>
-                  <option>Task5</option>
-                </select>
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Date</p>
-                </div>
-                <div class="col-md-9">
-                  <input type="date">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Start Time</p>
-                </div>
-                <div class="col-md-9">
-                  <input type="time" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <p>End Time</p>
-                </div>
-                <div class="col-md-9">
-                  <input type="time" />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <p>Description</p>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="timesheet-description"/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-9">
-                   <div clas="actionbutton">
-     <p class="button-container"><button class="user-aciton">Add Task</button></p>
-   </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        function removeRow(button) {
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>

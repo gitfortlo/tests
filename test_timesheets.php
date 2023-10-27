@@ -170,8 +170,8 @@
                         </select>
                     <td><input type="textarea" name="description[]"  placeholder="Description" required <?php echo $description;?>></td>
                     <td>
-                        <input type="number" name="hours[]" min="0" size="8" <?php echo $hours;?>> hours
-                        <input type="number" name="minutes[]" min="0" size="8" required <?php echo $minutes;?>> mins
+                        <input type="number" name="hours[]" min="0" max="16" size="8" <?php echo $hours;?>> hours
+                        <input type="number" name="minutes[]" min="0" max="60" size="8" required <?php echo $minutes;?>> mins
                     </td>
                     <td><button type="button" onclick="addRow()">Add Row</button></td>
                 </tr>
@@ -314,8 +314,8 @@
                 </td>
                 <td><input type="textarea" name="description[]" placeholder="Description" <?php echo $description;?>></td>
                 <td>
-                    <input type="number" name="hours[]" min='0' size="8" required <?php echo $hours;?>>hours
-                    <input type="number" name="minutes[]" min='0' size="8" required <?php echo $minutes;?>>mins
+                    <input type="number" name="hours[]" min='0' max="16" size="8" required <?php echo $hours;?>>hours
+                    <input type="number" name="minutes[]" min='0' max="60" size="8" required <?php echo $minutes;?>>mins
                 </td>
                 <td><button type="button" onclick="removeRow(this)">Remove</button></td>
             `;
