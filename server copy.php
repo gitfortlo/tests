@@ -139,7 +139,7 @@ if (isset($_POST['sub_ticket'])) {
   }
   $mail -> smtpClose();
   
-  header("Location: https://192.168.0.221/tests/index.php");
+  header("Location: https://192.168.0.107/tests/index.php");
 }}
 
 
@@ -182,7 +182,7 @@ if (isset($_POST['tech_sub'])) {
         <p>Steps to outcome/completion:</p>
         <p>$steps</p>
         <p>If you have any issues:</p>
-        <p>Contact 'IT email to be made'</p>";
+        <p>Contact max@tlo.co.za</p>";
   if (!$mail -> send()){
     echo "an error has been encountered whilst sending this email: {$mail -> ErrorInfo}";
   }else {

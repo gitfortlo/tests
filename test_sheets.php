@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 // Redirect to login page if not logged in
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
@@ -50,3 +49,31 @@ $stmt->execute();
 
 $timesheets = $stmt->fetchAll();
 ?>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- Update Form -->
+<form method="POST">
+    <?php foreach ($timesheets as $timesheet): ?>
+        <input type="hidden" name="ID" value="<?php echo $timesheet['ID']; ?>">
+        <label>Name</label>
+        <input type="text" name="name_person" value="<?php echo $timesheet['name_person']; ?>">
+        <label>Date</label>
+        <input type="date" name="work_date" value="<?php echo $timesheet['work_date']; ?>">
+        <label>Task</label>
+        <input type="text" name="project" value="<?php echo $timesheet['project']; ?>">
+        <label>Description</label>
+        <input type="text" name="description" value="<?php echo $timesheet['description']; ?>">
+        <label>Hours</label>
+        <input type="number" name="hours_worked" value="<?php echo $timesheet['hours_worked']; ?>">
+        <label>Minutes</label>
+        <input type="number" name="minutes_worked" value="<?php echo $timesheet['minutes_worked']; ?>">
+        <button type="submit" id="update" name="update">Update</button>
+        <br><hr><br>
+    <?php endforeach; ?>
+</form>
+
+</body>
+</html>

@@ -2,5 +2,21 @@
     "cSpell.words": [
         "maintitle",
         "timesheet"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "127.0.0.1",
+            "database": "test",
+            "username": "root",
+            "password": ""
+        }
     ]
 }

@@ -39,7 +39,7 @@
                     <th>Name</th>
                     <th>Project name</th>
                     <th>Description</th>
-                    <th>Time Worked</th>
+                    <th>Time Worked: HOURS THEN MINUTES</th>
                 </tr>
             </thead>
             <tbody>
@@ -155,6 +155,8 @@
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
                             <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus BA 4 Group 1">Tarsus BA 4 Group 1</option>
+                            <option value="Tarsus BA 4 Group 2">Tarsus BA 4 Group 2</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
@@ -299,6 +301,8 @@
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
                             <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus BA 4 Group 1">Tarsus BA 4 Group 1</option>
+                            <option value="Tarsus BA 4 Group 2">Tarsus BA 4 Group 2</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
@@ -314,8 +318,8 @@
                 </td>
                 <td><input type="textarea" name="description[]" placeholder="Description" <?php echo $description;?>></td>
                 <td>
-                    <input type="number" name="hours[]" min='0' max="16" size="8" required <?php echo $hours;?>>hours
-                    <input type="number" name="minutes[]" min='0' max="60" size="8" required <?php echo $minutes;?>>mins
+                <input type="number" name="hours[]" min="0" max="16" size="8" <?php echo $hours;?>> hours
+                        <input type="number" name="minutes[]" min="0" max="60" size="8" required <?php echo $minutes;?>> mins
                 </td>
                 <td><button type="button" onclick="removeRow(this)">Remove</button></td>
             `;

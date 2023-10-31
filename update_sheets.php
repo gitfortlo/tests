@@ -19,29 +19,11 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $loggedInUser = $_SESSION['username'];
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (isset($_POST['update'])) {
-        try {
-            $stmt = $conn->prepare("UPDATE timesheets SET name_person = :name, work_date = :work_date, project = :task, description = :description, hours_worked = :hours, minutes_worked = :minutes WHERE ID = :id");
-            
-            $stmt->bindParam(':id', $_POST['ID']);
-            $stmt->bindParam(':name', $_POST['name_person']);
-            $stmt->bindParam(':work_date', $_POST['work_date']);
-            $stmt->bindParam(':task', $_POST['project']);
-            $stmt->bindParam(':description', $_POST['description']);
-            $stmt->bindParam(':hours', $_POST['hours_worked']);
-            $stmt->bindParam(':minutes', $_POST['minutes_worked']);
-                
-            $stmt->execute();
 
-            echo "Record updated successfully";
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
-}
 
 $filter_sql = "SELECT * FROM timesheets WHERE name_person = :loggedInUser";
+
+
 
 $stmt = $conn->prepare($filter_sql);
 $stmt->bindParam(':loggedInUser', $loggedInUser);
@@ -51,7 +33,10 @@ $timesheets = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" >
+    </head>
 <body>
 
 <!-- Update Form -->
@@ -62,7 +47,7 @@ $timesheets = $stmt->fetchAll();
         <input type="text" name="name_person" value="<?php echo $timesheet['name_person']; ?>">
         <label>Date</label>
         <input type="date" name="work_date" value="<?php echo $timesheet['work_date']; ?>">
-        <label>Task</label>
+        <label>project</label>
         <select name="project" style="width: 125px;" value="<?php echo $timesheet['project']; ?>">
             <option value="Historic Projects">Historic Projects</option>
             <option value="Recruitment">Recruitment</option>
@@ -128,7 +113,7 @@ $timesheets = $stmt->fetchAll();
             <option value="MiX Telematics PM5 2023">MiX Telematics PM5 2023</option>
             <option value="ODETDP">ODETDP</option>
             <option value="Oleanders GM4">Oleanders GM4</option>
-            <option value="Orchids">Orchids</option>
+            <option value="OrchIDs">OrchIDs</option>
             <option value="Periwinkles BA4">Periwinkles BA4</option>
             <option value="Petunias BA4">Petunias BA4</option>
             <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>

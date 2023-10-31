@@ -99,7 +99,7 @@ $timesheets = $stmt->fetchAll();
         <label>Project</label>
         <select name="project">
             <?php foreach ($projectList as $project): ?>
-                <option style="width: 125px ;" value="<?php echo $project; ?>"><?php echo $project; ?></option>
+                <option style="width: 125px ;" value="<?php echo $project; ?>"><?php echo $project;                              ?></option>
             <?php endforeach; ?>
         </select>
         <label>Description</label>
@@ -108,7 +108,7 @@ $timesheets = $stmt->fetchAll();
         <input type="number" name="hours_worked" value="<?php echo $timesheet['hours_worked']; ?>">
         <label>Minutes</label>
         <input type="number" name="minutes_worked" value="<?php echo $timesheet['minutes_worked']; ?>">
-        <button type="submit" name="update">Update</button>
+        <button type="submit" id="update" name="update">Update</button>
         <br><hr><br>
     <?php endforeach; ?>
 </form>
