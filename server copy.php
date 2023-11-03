@@ -118,6 +118,7 @@ if (isset($_POST['sub_ticket'])) {
     mysqli_query($db, $put_into);
     $mail -> setFrom("thelearningorganisationza@gmail.com", "TLO - Tech Support");
     $mail -> addAddress("thelearningorganisationza@gmail.com", "IT - Storm Jamie Paiva");
+    $mail -> addAddress("storm.paiva@tlo.co.za", "IT - Storm Jamie Paiva");
     $mail -> addAddress("sbonelo.ndlovu@tlo.co.za", "IT - Sbonelo Ndlovu");
     $mail -> addAddress("etienne@tlo.co.za", "IT - Etienne Myburgh");
     $mail -> addAddress("$email", "$client_name $client_surname");

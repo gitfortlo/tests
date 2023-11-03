@@ -56,10 +56,16 @@
                         <option value="Larkspurs BA4">Larkspurs BA4</option>
                         <option value="Aloes PM4">Aloes PM4</option>
                         <option value="Foxgloves PM4">Foxgloves PM4</option>
+                        <option value="ATC">ATC</option>
+                        <option value="Amaryllis New_Venture_Creation 4">Amaryllis New_Venture_Creation 4</option>
                             <option value="Anthuriums GM5">Anthuriums GM5</option>
+                            <option value="Ademia GM 5">Ademia GM 5</option>
+                            <option value="Ademia BA 4">Ademia BA 4</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
+                            <option value="ASMS Tier 2">ASMS Tier 2</option>
+                            <option value="ASMS Tier 3">ASMS Tier 3</option>
                             <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
                             <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
                             <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
@@ -105,6 +111,7 @@
                             <option value="Larkspurs BA4">Larkspurs BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
+                            <option value="Mercedes Benz Group 1">Mercedes Benz Group 1</option>
                             <option value="Mix Telematics GM5">Mix Telematics GM5</option>
                             <option value="Mix Telematics KZN GM4">Mix Telematics KZN GM4</option>
                             <option value="MiX Telematics PM5 2022">MiX Telematics PM5 2022</option>
@@ -112,6 +119,7 @@
                             <option value="ODETDP">ODETDP</option>
                             <option value="Oleanders GM4">Oleanders GM4</option>
                             <option value="Orchids">Orchids</option>
+                            <option value="Park Village">Park Village</option>
                             <option value="Periwinkles BA4">Periwinkles BA4</option>
                             <option value="Petunias BA4">Petunias BA4</option>
                             <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
@@ -154,9 +162,13 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus Leadership Development</option>
                             <option value="Tarsus BA 4">Tarsus BA 4</option>
                             <option value="Tarsus BA 4 Group 1">Tarsus BA 4 Group 1</option>
                             <option value="Tarsus BA 4 Group 2">Tarsus BA 4 Group 2</option>
+                            <option value="Tarsus GM 4 Group 1">Tarsus GM 4 Group 1</option>
+                            <option value="Tarsus GM 4 Group 2">Tarsus GM 4 Group 2</option>
+                            <option value="Tarsus SSP">Tarsus SSP</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 4 FY 23/24</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 6 FY 23/24</option>
                             <option value="Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24">Tarsus Generic Management (Strategic) NQF Level 5 FY 23/24</option>
@@ -168,6 +180,7 @@
                             <option value="Trumpets GM4">Trumpets GM4</option>
                             <option value="Valerians NVC4">Valerians NVC4</option>
                             <option value="Veronicas GM4">Veronicas GM4</option>
+                            <option value="Uyandiswa">Uyandiswa</option>
                             <option value="Zaharas GM5">Zaharas GM5</option>
                         </select>
                     <td><input type="textarea" name="description[]"  placeholder="Description" required <?php echo $description;?>></td>
@@ -181,6 +194,10 @@
         </table>
         <button id="addRowButton" type="button" onclick="addRow()">Add Row</button>
         <input type="submit" name="Submit_Timesheet" value="Submit_Timesheet">
+        
+        <p>
+            To Home Page <a href="index.php">Home</a>
+        </p>
     </form>
 
     <script>
@@ -200,10 +217,14 @@
                     <option value="Larkspurs BA4">Larkspurs BA4</option>
                     <option value="Aloes PM4">Aloes PM4</option>
                     <option value="Foxgloves PM4">Foxgloves PM4</option>
+                    <option value="ATC">ATC</option>
                             <option value="Anthuriums GM5">Anthuriums GM5</option>
                             <option value="ASMS Internships Tier 1">ASMS Internships Tier 1</option>
                             <option value="ASMS Internships Tier 2">ASMS Internships Tier 2</option>
                             <option value="ASMS Internships Tier 3">ASMS Internships Tier 3</option>
+                            <option value="ASMS Tier 2">ASMS Tier 2</option>
+                            <option value="ASMS Tier 3">ASMS Tier 3</option>
+
                             <option value="Axiz Tier 1 & Tier 2 2022">Axiz Tier 1 & Tier 2 2022</option>
                             <option value="Axiz Tier 2 FY 23/24">Axiz Tier 2 FY 23/24</option>
                             <option value="Axiz Tier 3 FY 23/24">Axiz Tier 3 FY 23/24</option>
@@ -249,6 +270,7 @@
                             <option value="Larkspurs BA4">Larkspurs BA4</option>
                             <option value="Maltas Sys Dev 5">Maltas Sys Dev 5</option>
                             <option value="MAN Personal Mastery">MAN Personal Mastery</option>
+                            <option value="Mercedes Benz Group 1">Mercedes Benz Group 1</option>
                             <option value="Mix Telematics GM5">Mix Telematics GM5</option>
                             <option value="Mix Telematics KZN GM4">Mix Telematics KZN GM4</option>
                             <option value="MiX Telematics PM5 2022">MiX Telematics PM5 2022</option>
@@ -256,6 +278,7 @@
                             <option value="ODETDP">ODETDP</option>
                             <option value="Oleanders GM4">Oleanders GM4</option>
                             <option value="Orchids">Orchids</option>
+                            <option value="Park Village">Park Village</option>
                             <option value="Periwinkles BA4">Periwinkles BA4</option>
                             <option value="Petunias BA4">Petunias BA4</option>
                             <option value="Pinnacle BA 4 2023/2024 ">Pinnacle BA 4 2023/2024 </option>
@@ -300,9 +323,13 @@
                             <option value="Talksure GM5 2023">Talksure GM5 2023</option>
                             <option value="Talksure Skills Programme">Talksure Skills Programme</option>
                             <option value="Tarsus Contact Centre 4 2022">Tarsus Contact Centre 4 2022</option>
+                            <option value="Tarsus BA 4">Tarsus Leadership Development</option>
                             <option value="Tarsus BA 4">Tarsus BA 4</option>
+                            <option value="Tarsus SSP">Tarsus SSP</option>
                             <option value="Tarsus BA 4 Group 1">Tarsus BA 4 Group 1</option>
                             <option value="Tarsus BA 4 Group 2">Tarsus BA 4 Group 2</option>
+                            <option value="Tarsus GM 4 Group 1">Tarsus GM 4 Group 1</option>
+                            <option value="Tarsus GM 4 Group 2">Tarsus GM 4 Group 2</option>
                             <option value="Tarsus PM4 2022">Tarsus PM4 2022</option>
                             <option value="Tarsus NVC 4 2022">Tarsus NVC 4 2022</option>
                             <option value="Tarsus Sys Dev 5 2022">Tarsus Sys Dev 5 2022</option>
@@ -312,7 +339,7 @@
                             <option value="Tiger Flowers PM4">Tiger Flowers PM4</option>
                             <option value="Trumpets GM4">Trumpets GM4</option>
                             <option value="Valerians NVC4">Valerians NVC4</option>
-                            <option value="Veronicas GM4">Veronicas GM4</option>
+                            <option value="Uyandiswa">Uyandiswa</option>
                             <option value="Zaharas GM5">Zaharas GM5</option>
                     </select>
                 </td>
@@ -331,5 +358,7 @@
             row.parentNode.removeChild(row);
         }
     </script>
+
+
 </body>
 </html>

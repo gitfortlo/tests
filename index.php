@@ -42,7 +42,6 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-		<p>Here are your tickets history</p>
 		<p><a href="tickreport.php?" style="color:crimson;">Log a problem</a></p>
 		<p><a href="test_timesheets.php?" style="color:crimson;">Submit Timesheet</a></p>
 		
